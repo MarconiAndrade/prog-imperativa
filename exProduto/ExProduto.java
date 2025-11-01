@@ -21,10 +21,11 @@ public class ExProduto{
         prod.precoUnitario = input.nextDouble();
         System.out.println("Digite a quantidade do estoque:");
         prod.qtdEstoque = input.nextInt();
+        input.nextLine();//enter da digitação anterior
     }
 
     public static void imprimir(Produto prod){
-        System.out.printf("Título: %s", prod.titulo);
+        System.out.printf("\nTítulo: %s", prod.titulo);
         System.out.printf("\nDescrição: %s", prod.descricao);
         System.out.printf("\nPreço unitário: R$%.2f", prod.precoUnitario);
         System.out.printf("\nQuantidade no estoque: %d\n", prod.qtdEstoque);
