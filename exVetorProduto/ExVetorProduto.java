@@ -14,7 +14,6 @@ public class ExVetorProduto{
             prod[i] = new Produto();
             preencherInformacoes(prod[i]);
         }
-
     }
 
     public static void preencherInformacoes(Produto prod){
