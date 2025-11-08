@@ -12,25 +12,34 @@ public class ExVetorProduto{
     public static void preencherVetor(Produto[] prod){
         for(int i = 0; i < QTD; i++){
             prod[i] = new Produto();
-            System.out.println("Digite o título do produto:");
-            prod[i].titulo = input.nextLine();
-            System.out.println("Digite a descrição do produto:");
-            prod[i].descricao = input.nextLine();
-            System.out.println("Digite o preço unitário do produto:");
-            prod[i].precoUnitario = input.nextDouble();
-            System.out.println("Digite a quantidade do estoque:");
-            prod[i].qtdEstoque = input.nextInt();
-            input.nextLine();//enter da digitação anterior
+            preencherInformacoes(prod[i]);
         }
 
     }
 
+    public static void preencherInformacoes(Produto prod){
+        System.out.println("Digite o título do produto:");
+        prod.titulo = input.nextLine();
+        System.out.println("Digite a descrição do produto:");
+        prod.descricao = input.nextLine();
+        System.out.println("Digite o preço unitário do produto:");
+        prod.precoUnitario = input.nextDouble();
+        System.out.println("Digite a quantidade do estoque:");
+        prod.qtdEstoque = input.nextInt();
+        input.nextLine();//enter da digitação anterior
+    }
+
     public static void imprimirVetor(Produto[] prod){
         for(int i = 0; i < QTD; i++){
-            System.out.printf("\nTítulo: %s", prod[i].titulo);
-            System.out.printf("\nDescrição: %s", prod[i].descricao);
-            System.out.printf("\nPreço unitário: R$%.2f", prod[i].precoUnitario);
-            System.out.printf("\nQuantidade no estoque: %d\n", prod[i].qtdEstoque);
+            System.out.println("\n--------- Produto " + (i+1) + " ---------");
+            imprimir(prod[i]);
         }
+    }
+
+    public static void imprimir(Produto prod){
+        System.out.printf("\nTítulo: %s", prod.titulo);
+        System.out.printf("\nDescrição: %s", prod.descricao);
+        System.out.printf("\nPreço unitário: R$%.2f", prod.precoUnitario);
+        System.out.printf("\nQuantidade no estoque: %d\n", prod.qtdEstoque);
     }
 }
