@@ -12,17 +12,15 @@ public class ExVetorProduto{
     public static void preencherVetor(Produto[] prod){
         for(int i = 0; i < QTD; i++){
             prod[i] = new Produto();
-            for(int j = 0; j < QTD; i++){
-                System.out.println("Digite o título do produto:");
-                prod[j].titulo = input.nextLine();
-                System.out.println("Digite a descrição do produto:");
-                prod[j].descricao = input.nextLine();
-                System.out.println("Digite o preço unitário do produto:");
-                prod[j].precoUnitario = input.nextDouble();
-                System.out.println("Digite a quantidade do estoque:");
-                prod[j].qtdEstoque = input.nextInt();
-                input.nextLine();//enter da digitação anterior
-            }
+            System.out.println("Digite o título do produto:");
+            prod[i].titulo = input.nextLine();
+            System.out.println("Digite a descrição do produto:");
+            prod[i].descricao = input.nextLine();
+            System.out.println("Digite o preço unitário do produto:");
+            prod[i].precoUnitario = input.nextDouble();
+            System.out.println("Digite a quantidade do estoque:");
+            prod[i].qtdEstoque = input.nextInt();
+            input.nextLine();//enter da digitação anterior
         }
 
     }
