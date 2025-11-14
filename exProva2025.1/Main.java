@@ -3,55 +3,62 @@ import java.util.Scanner;
 public class Main{
     public static Scanner input = new Scanner(System.in);
     public static void main(String[] args){
-
+        Pessoa[] pessoas = new Pessoa[3];
+        int qtd = 0;
+        qtd = cadastrarPessoa(pessoas, qtd);
+        imprimirPessoas(pessoas, qtd);
     }
 
     public static int cadastrarPessoa(Pessoa[] v, int qtd){
         if(qtd >= v.length){
             System.out.println("Vetor cheio! Não é possível cadastrar mais ninguém.");
+            return qtd;
         }
-        else{
+        for(int i = 0; i < v.length; i++){
+            v[qtd] = new Pessoa();
             System.out.println("Digite seu nome:");
-            v.nome = input.nextLine();
+            v[qtd].nome = input.nextLine();
             System.out.println("Digite sua idade:");
-            v.idade = input.nextInt();
+            v[qtd].idade = input.nextInt();
+            input.nextLine();
             System.out.println("Digite seu peso:");
-            v.peso = input.nextDouble();
+            v[qtd].peso = input.nextDouble();
+            input.nextLine();
             System.out.println("Digite sua altura:");
-            v.altura = input.nextDouble();
-            buscarNome(v, qtd);
-            if(buscarNome != -1){
+            v[qtd].altura = input.nextDouble();
+            input.nextLine();
+            if(buscarNome(v, qtd, v[qtd].nome) != -1){
                 System.out.println("Favor digitar novamente seu nome com sobrenome:");
-                v.nome = input.nextLine();
+                v[qtd].nome = input.nextLine();
             }
             qtd++;
         }
         return qtd;
     }
 
-    public static int buscarNome(Pessoa[] v, int qtd){
+    public static int buscarNome(Pessoa[] v, int qtd, String nome){
         for(int i = 0; i < qtd; i++){
-            if(v[i] == v.nome){
+            if(v[i].nome.equals(nome)){
                 return i;
             }
         }
         return -1;
     }
 
-    public static void imprimirPessoas(Pessoa [] v, int qtd){
+    public static void imprimirPessoas(Pessoa[] v, int qtd){
         for(int i = 0; i < qtd; i++){
-            System.out.printf("Pessoa %d\n", i+1);
-            System.out.printf("Nome: %s\n", v[i].v.nome);
-            System.out.printf("Idade: %d\n", v[i].v.idade);
-            System.out.printf("Peso: %.2f\n", v[i].v.peso);
-            System.out.printf("Altura: %.2f\n", v[i].v.altura);
+            System.out.printf("\n-----Pessoa %d-----\n", i+1);
+            System.out.printf("Nome: %s\n", v[i].nome);
+            System.out.printf("Idade: %d\n", v[i].idade);
+            System.out.printf("Peso: %.2f\n", v[i].peso);
+            System.out.printf("Altura: %.2f\n", v[i].altura);
             double imc = calcularIMC(v[i]);
             System.out.printf("IMC: %.2f\n", imc);
         }
     }
 
     public static double calcularIMC(Pessoa p){
-        return p.peso/p.altura*p.altura;
+        return p.peso/(p.altura*p.altura);
     }
 
     
