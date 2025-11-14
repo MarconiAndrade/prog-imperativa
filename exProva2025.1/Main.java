@@ -7,6 +7,8 @@ public class Main{
         int qtd = 0;
         qtd = cadastrarPessoa(pessoas, qtd);
         imprimirPessoas(pessoas, qtd);
+        maisVelhaIMCMagreza(pessoas, qtd);
+
     }
 
     public static int cadastrarPessoa(Pessoa[] v, int qtd){
@@ -53,7 +55,7 @@ public class Main{
             System.out.printf("Peso: %.2f\n", v[i].peso);
             System.out.printf("Altura: %.2f\n", v[i].altura);
             double imc = calcularIMC(v[i]);
-            System.out.printf("IMC: %.2f\n", imc);
+            System.out.printf("IMC: %.2f\n\n", imc);
         }
     }
 
@@ -61,5 +63,16 @@ public class Main{
         return p.peso/(p.altura*p.altura);
     }
 
-    
+    public static int maisVelhaIMCMagreza(Pessoa[] v, int qtd){
+        for(int i = 1; i <= qtd; i++){
+            if(calcularIMC(v[i]) < 18.5){
+                if(v[i].idade > v[i-1].idade){
+                    System.out.printf("A pessoa mais velha com IMC Magreza está na posição %d\n", i+1);
+                    return i;
+                }
+            }
+            
+        }
+        return -1;
+    }
 }
