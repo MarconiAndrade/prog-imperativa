@@ -20,6 +20,11 @@ public class Main{
             v[qtd] = new Pessoa();
             System.out.println("Digite seu nome:");
             v[qtd].nome = input.nextLine();
+            while(buscarNome(v, qtd, v[qtd].nome) != -1){
+                System.out.println("Esse nome já existe no vetor!");
+                System.out.println("Favor digitar novamente seu nome com sobrenome:");
+                v[qtd].nome = input.nextLine();
+            }
             System.out.println("Digite sua idade:");
             v[qtd].idade = input.nextInt();
             input.nextLine();
@@ -29,10 +34,6 @@ public class Main{
             System.out.println("Digite sua altura:");
             v[qtd].altura = input.nextDouble();
             input.nextLine();
-            if(buscarNome(v, qtd, v[qtd].nome) != -1){
-                System.out.println("Favor digitar novamente seu nome com sobrenome:");
-                v[qtd].nome = input.nextLine();
-            }
             qtd++;
         }
         return qtd;
@@ -40,7 +41,7 @@ public class Main{
 
     public static int buscarNome(Pessoa[] v, int qtd, String nome){
         for(int i = 0; i < qtd; i++){
-            if(v[i].nome.equals(nome)){
+            if(v[i].nome.equalsIgnoreCase(nome)){
                 return i;
             }
         }
@@ -64,15 +65,17 @@ public class Main{
     }
 
     public static int maisVelhaIMCMagreza(Pessoa[] v, int qtd){
-        for(int i = 1; i <= qtd; i++){
-            if(calcularIMC(v[i]) < 18.5){
-                if(v[i].idade > v[i-1].idade){
-                    System.out.printf("A pessoa mais velha com IMC Magreza está na posição %d\n", i+1);
-                    return i;
-                }
+        int maisVelhaMagreza = -1;
+        for(int i = 0; i < qtd; i++){
+            if(calcularIMC(v[i]) < 18.5 && (maisVelhaMagreza == -1 || v[i].idade > v[maisVelhaMagreza].idade)){
+                maisVelhaMagreza = i;
             }
-            
         }
-        return -1;
+        System.out.printf("A pessoa mais velha com IMC Magreza está na posição %d\n", maisVelhaMagreza+1);
+        return maisVelhaMagreza;
+    }
+
+    public static void insertionSortPorNome(Pessoa[] v, int qtd){
+        
     }
 }
