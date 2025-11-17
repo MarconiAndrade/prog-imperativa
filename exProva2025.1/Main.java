@@ -8,7 +8,8 @@ public class Main{
         qtd = cadastrarPessoa(pessoas, qtd);
         imprimirPessoas(pessoas, qtd);
         maisVelhaIMCMagreza(pessoas, qtd);
-
+        insertionSortPorNome(pessoas, qtd);
+        imprimirPessoas(pessoas, qtd);
     }
 
     public static int cadastrarPessoa(Pessoa[] v, int qtd){
@@ -56,7 +57,7 @@ public class Main{
             System.out.printf("Peso: %.2f\n", v[i].peso);
             System.out.printf("Altura: %.2f\n", v[i].altura);
             double imc = calcularIMC(v[i]);
-            System.out.printf("IMC: %.2f\n\n", imc);
+            System.out.printf("IMC: %.2f\n", imc);
         }
     }
 
@@ -71,11 +72,28 @@ public class Main{
                 maisVelhaMagreza = i;
             }
         }
-        System.out.printf("A pessoa mais velha com IMC Magreza está na posição %d\n", maisVelhaMagreza+1);
+        System.out.printf("\nA pessoa mais velha com IMC Magreza está na posição %d\n", maisVelhaMagreza+1);
         return maisVelhaMagreza;
     }
 
     public static void insertionSortPorNome(Pessoa[] v, int qtd){
-        
+        for(int i = 1; i < qtd; i++){
+            Pessoa chave = v[i];
+            int j = i - 1;
+            while(j >= 0 && v[j].nome.compareTo(chave.nome) > 0){
+                v[j+1] = v[j];
+                j--;
+            }
+            v[j+1] = chave;
+        }
+    }
+
+    public static void somaCruzada(int[] v1, int[] v2, int[] vs){
+        if(v1.length != v2.length || v1.length != vs.length){
+            System.out.println("Soma impossível!");
+        }
+        for(int i = 0; i < vs.length; i++){
+            vs[i] = v1[i] + v2[v2.length - 1 - i];
+        }
     }
 }
