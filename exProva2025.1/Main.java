@@ -28,10 +28,8 @@ public class Main{
             }
             System.out.println("Digite sua idade:");
             v[qtd].idade = input.nextInt();
-            input.nextLine();
             System.out.println("Digite seu peso:");
             v[qtd].peso = input.nextDouble();
-            input.nextLine();
             System.out.println("Digite sua altura:");
             v[qtd].altura = input.nextDouble();
             input.nextLine();
