@@ -86,12 +86,12 @@ public class Main{
         }
     }
 
-    public static void somaCruzada(int[] v1, int[] v2, int[] vs){
+    public static void somaVetor(int[] v1, int[] v2, int[] vs){
         if(v1.length != v2.length || v1.length != vs.length){
             System.out.println("Soma impossível!");
         }
         for(int i = 0; i < vs.length; i++){
-            vs[i] = v1[i] + v2[v2.length - 1 - i];
+            vs[i] = v1[i] + v2[i];
         }
     }
 }
