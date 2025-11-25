@@ -1,0 +1,20 @@
+Nome: leite
+Descrição: integral
+Categoria: comida
+Quantidade em estoque: 40
+Quantidade mínima: 5
+Preço do produto: 6
+
+Nome: sabonete
+Descrição: líquido
+Categoria: higiene
+Quantidade em estoque: 50
+Quantidade mínima: 10
+Preço do produto: 10
+
+Nome: pão
+Descrição: integral
+Categoria: comida
+Quantidade em estoque: 200
+Quantidade mínima: 50
+Preço do produto: 1
