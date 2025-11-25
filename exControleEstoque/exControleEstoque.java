@@ -35,16 +35,16 @@ public class exControleEstoque{
                     break;
                 case 5:
                     System.out.println("Qual produto deseja remover?");
-                    String remocao = input.nextLine();
-                    tam = remover(produtos, tam, remocao);
+                    String nomeProdRemocao = input.nextLine();
+                    tam = remover(produtos, tam, nomeProdRemocao);
                     break;
                 case 6:
                     System.out.println("Qual produto deseja atualizar o preço?");
-                    String nomeNovoPreco = input.nextLine();
-                    
+                    String nomeProdNovoPreco = input.nextLine();
+                    atualizarPreco(produtos, tam, nomeProdNovoPreco);
                     break;
                 case 7:
-
+                    listagem(produtos, tam);
                     break;
                 default:
                     System.out.println("Opção inválida!");
@@ -114,7 +114,7 @@ public class exControleEstoque{
         }
     }
 
-    public static int remover(int[] v, int tam, int x){
+    public static int remover(Produto[] v, int tam, int x){
         int pos = buscaSequencial(v, tam, x);
         if(pos == -1){
             System.out.println("Não encontrado no vetor!");
@@ -126,7 +126,7 @@ public class exControleEstoque{
         return tam-1;
     }
 
-    public static int buscaSequencial(Produto[] p, int tam, int x){
+    public static int buscaSequencial(Produto[] v, int tam, int x){
         for(int i = 0; i < tam; i++){
             if(v[i].nome.equalsIgnoreCase(x)){
             return i;
@@ -135,5 +135,42 @@ public class exControleEstoque{
         return -1;
     }
 
+    public static void atualizarPreco(Produto[] v, int tam, String x){
+        for(int i = 0; i < tam; i++){
+            if(v[i].nome.equalsIgnoreCase(x)){
+                System.out.println("Digite o novo preço:");
+                double novoPreco = input.nextDouble();
+                input.nextLine();
+                v[i].preco = novoPreco;
+                System.out.println("Preço atualizado!");
+                return;
+            }
+        }
+        System.out.println("Produto não encontrado!");
+    }
 
+    public static double listagem(Produto[] v, int tam){
+        System.out.println("Digite a categoria:");
+        String categoriaBuscada = input.nextLine();
+        double subtotal = 0;
+        boolean achou = false;
+
+        for(int i = 0; i < tam; i++){
+            if(v[i].categoria.equalsIgnoreCase(categoriaBuscada)){
+                System.out.prinf("\nNome: %s", v[i].nome);
+                System.out.printf("\nPreço: %.2f", v[i].precoUnitario);
+                System.out.printf("\nQuantidade: %d\n", v[i].qtdEstoque);
+                System.out.printf("-------------------");
+
+                subtotal += v[i].precoUnitario * v[i].qtdEstoque;
+                achou = true;
+            }
+        }
+        if(!achou){
+            System.out.println("Nenhum produto encontrado nesta categoria.");
+            return 0;
+        }
+        System.out.printf("\nSubtotal da categoria %s: R$ %.2f", categoriaBuscada, subtotal);
+        return subtotal;
+    } 
 }
