@@ -2,13 +2,13 @@ import java.util.Scanner;
 
 public class exControleEstoque{
     public static Scanner input = new Scanner(System.in);
-    public static final QTD = 3;
+    public static final int QTD = 3;
     public static void main(String[] args){
         Produto[] produtos = new Produto[QTD];
         int opcao, tam = 0;
 
         do{
-            System.out.println("-----MENU-----");
+            System.out.println("----- MENU -----");
             System.out.println("1 - Cadastrar novo produto");
             System.out.println("2 - Listar produto(s)");
             System.out.println("3 - Filtrar por categoria");
@@ -26,13 +26,15 @@ public class exControleEstoque{
                     tam = imprimirVetor(produtos);
                     break;
                 case 3:
-                    tam = 
+                    System.out.println("Qual categoria deseja filtrar?");
+                    String categoriaFiltro = input.nextLine();
+                    tam = filtrarCategoria(produtos, tam, categoriaFiltro);
                     break;
                 case 4:
-
+                    tam = insertionSortPorNome(produtos, tam);
                     break;
                 case 5:
-
+                    tam = remover();aaaaa
                     break;
                 case 6:
 
@@ -47,15 +49,14 @@ public class exControleEstoque{
         } while(opcao != 0);
     }
 
-    public static int cadastrarProduto(Produto[] produtos, int tam){
-        if(tam >= produtos.length){
+    public static int cadastrarProduto(Produto[] v, int tam){
+        if(tam >= v.length){
             System.out.println("Não é possível cadastrar mais produtos, vetor cheio!");
             return tam;
         }    
 
         Produto prod = new Produto();
 
-        input.nextLine();
         System.out.println("Nome do produto:");
         prod.nome = input.nextLine();
         System.out.println("Descrição do produto");
@@ -65,19 +66,19 @@ public class exControleEstoque{
         System.out.println("Preço unitário do produto:");
         prod.preco = input.nextDouble();
         System.out.println("Quantidade no estoque");
-        prod.estoque = input.nextInt();        
+        prod.estoque = input.nextInt();   
         System.out.println("Quantidade mínima no estoque:");
-        prod.qtdMinima = input.nextInt();    
+        prod.qtdMinima = input.nextInt();
+        input.nextLine();//enter da digitação anterior
 
-
-        produtos[tam] = prod;
+        v[tam] = prod;
         return tam+1;
     }
 
-    public static void imprimirVetor(Produto[] prod){
+    public static void imprimirVetor(Produto[] v){
         for(int i = 0; i < QTD; i++){
             System.out.println("\n--------- Produto " + (i+1) + " ---------");
-            imprimir(prod[i]);
+            imprimir(v[i]);
         }
     }
 
@@ -89,5 +90,23 @@ public class exControleEstoque{
         System.out.printf("\nQuantidade no estoque: %d\n", prod.qtdEstoque);
     }
 
-    
+    public static void filtrarCategoria(Produto[] v, int tam, String categEscolhida){
+        for(int i = 0; i < tam; i++){
+            if(v[i].categoria.equalsIgnoreCase(categEscolhida)){
+                imprimir(v[i]);
+            }
+        }
+    }
+
+    public static void insertionSortPorNome(Produto[] v, int tam){
+        for(int i = 1; i < tam; i++){
+            Produto chave = v[i];
+            int j = i - 1;
+            while(j >= 0 && v[j].nome.compareTo(chave.nome) > 0){
+                v[j+1] = v[j];
+                j--;
+            }
+            v[j+1] = chave;
+        }
+    }
 }
