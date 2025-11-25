@@ -34,10 +34,14 @@ public class exControleEstoque{
                     tam = insertionSortPorNome(produtos, tam);
                     break;
                 case 5:
-                    tam = remover();aaaaa
+                    System.out.println("Qual produto deseja remover?");
+                    String remocao = input.nextLine();
+                    tam = remover(produtos, tam, remocao);
                     break;
                 case 6:
-
+                    System.out.println("Qual produto deseja atualizar o preço?");
+                    String nomeNovoPreco = input.nextLine();
+                    
                     break;
                 case 7:
 
@@ -109,4 +113,27 @@ public class exControleEstoque{
             v[j+1] = chave;
         }
     }
+
+    public static int remover(int[] v, int tam, int x){
+        int pos = buscaSequencial(v, tam, x);
+        if(pos == -1){
+            System.out.println("Não encontrado no vetor!");
+            return tam;
+        }
+        for(int i = pos; i < tam-1; i++){
+            v[i] = v[i+1];
+        }
+        return tam-1;
+    }
+
+    public static int buscaSequencial(Produto[] p, int tam, int x){
+        for(int i = 0; i < tam; i++){
+            if(v[i].nome.equalsIgnoreCase(x)){
+            return i;
+            }
+        }
+        return -1;
+    }
+
+
 }
