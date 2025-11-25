@@ -1,8 +1,8 @@
 public class Produto{
-    String nome;
-    String descricao;
-    int qtdEstoque;
-    double precoUnitario;
-    String categoria;
-    int qtdMinima;
+    public String nome;
+    public String descricao;
+    public String categoria;
+    public double precoUnitario;
+    public int qtdEstoque;
+    public int qtdMinima;
 }
