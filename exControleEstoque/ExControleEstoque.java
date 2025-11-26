@@ -1,6 +1,15 @@
 import java.util.Scanner;
 
-public class exControleEstoque{
+class Produto{
+    String nome;
+    String descricao;
+    String categoria;
+    double precoUnitario;
+    int qtdEstoque;
+    int qtdMinima;
+}
+
+public class ExControleEstoque{
     public static Scanner input = new Scanner(System.in);
     public static final int QTD = 3;
     public static void main(String[] args){
@@ -8,7 +17,7 @@ public class exControleEstoque{
         int opcao, tam = 0;
 
         do{
-            System.out.println("----- MENU -----");
+            System.out.println("\n---------- MENU ----------");
             System.out.println("1 - Cadastrar novo produto");
             System.out.println("2 - Listar produto(s)");
             System.out.println("3 - Filtrar por categoria");
@@ -16,6 +25,7 @@ public class exControleEstoque{
             System.out.println("5 - Remover elemento");
             System.out.println("6 - Atualizar preço");
             System.out.println("7 - Listagem com subtotal do valor em estoque por categoria");
+            System.out.println("0 - Sair do programa");
 
             opcao = input.nextInt();
             switch(opcao){
@@ -50,7 +60,12 @@ public class exControleEstoque{
                     listagem(produtos, tam);
                     break;
                 default:
+                    if(opcao == 0){
+                        System.out.println("Fechando o programa");
+                    }
+                    else{
                     System.out.println("Opção inválida!");
+                    }
                     break;
             }
         } while(opcao != 0);
@@ -62,23 +77,23 @@ public class exControleEstoque{
             return tam;
         }    
 
-        for(int i = 0; i < v.length; i++){
-            v[tam] = new Produto();
-            System.out.println("Nome do produto:");
-            v[tam].nome = input.nextLine();
-            System.out.println("Descrição do produto");
-            v[tam].descricao = input.nextLine();
-            System.out.println("Categoria do produto");
-            v[tam].categoria = input.nextLine();
-            System.out.println("Preço unitário do produto:");
-            v[tam].precoUnitario = input.nextDouble();
-            System.out.println("Quantidade no estoque");
-            v[tam].qtdEstoque = input.nextInt();   
-            System.out.println("Quantidade mínima no estoque:");
-            v[tam].qtdMinima = input.nextInt();
-            input.nextLine();//enter da digitação anterior
-            return tam++;
-        }
+        v[tam] = new Produto();
+
+        input.nextLine();
+        System.out.println("Nome do produto:");
+        v[tam].nome = input.nextLine();
+        System.out.println("Descrição do produto:");
+        v[tam].descricao = input.nextLine();
+        System.out.println("Categoria do produto:");
+        v[tam].categoria = input.nextLine();
+        System.out.println("Preço unitário do produto:");
+        v[tam].precoUnitario = input.nextDouble();
+        System.out.println("Quantidade no estoque");
+        v[tam].qtdEstoque = input.nextInt();   
+        System.out.println("Quantidade mínima no estoque:");
+        v[tam].qtdMinima = input.nextInt();
+        input.nextLine();//enter da digitação anterior
+        tam++;
         return tam;
     }
 
@@ -90,7 +105,7 @@ public class exControleEstoque{
     }
 
     public static void imprimir(Produto prod){
-        System.out.printf("\nNome: %s", prod.nome);
+        System.out.printf("Nome: %s", prod.nome);
         System.out.printf("\nDescrição: %s", prod.descricao);
         System.out.printf("\nCategoria: %s", prod.categoria);
         System.out.printf("\nPreço unitário: R$%.2f", prod.precoUnitario);
@@ -100,6 +115,7 @@ public class exControleEstoque{
     public static void filtrarCategoria(Produto[] v, int tam, String categEscolhida){
         for(int i = 0; i < tam; i++){
             if(v[i].categoria.equalsIgnoreCase(categEscolhida)){
+                System.out.println("\n");
                 imprimir(v[i]);
             }
         }

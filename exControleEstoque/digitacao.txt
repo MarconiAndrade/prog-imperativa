@@ -1,20 +1,296 @@
+---------- MENU ----------
+1 - Cadastrar novo produto
+2 - Listar produto(s)
+3 - Filtrar por categoria
+4 - Ordenar
+5 - Remover elemento
+6 - Atualizar preço
+7 - Listagem com subtotal do valor em estoque por categoria
+0 - Sair do programa
+1
+Nome do produto:
+leite
+Descrição do produto:
+integral
+Categoria do produto:
+comida
+Preço unitário do produto:
+6
+Quantidade no estoque
+80
+Quantidade mínima no estoque:
+5
+
+---------- MENU ----------
+1 - Cadastrar novo produto
+2 - Listar produto(s)
+3 - Filtrar por categoria
+4 - Ordenar
+5 - Remover elemento
+6 - Atualizar preço
+7 - Listagem com subtotal do valor em estoque por categoria
+0 - Sair do programa
+1
+Nome do produto:
+sabonete
+Descrição do produto:
+líquido
+Categoria do produto:
+higiene
+Preço unitário do produto:
+10
+Quantidade no estoque
+50
+Quantidade mínima no estoque:
+5
+
+---------- MENU ----------
+1 - Cadastrar novo produto
+2 - Listar produto(s)
+3 - Filtrar por categoria
+4 - Ordenar
+5 - Remover elemento
+6 - Atualizar preço
+7 - Listagem com subtotal do valor em estoque por categoria
+0 - Sair do programa
+1
+Nome do produto:
+banana
+Descrição do produto:
+prata
+Categoria do produto:
+comida
+Preço unitário do produto:
+2
+Quantidade no estoque
+100
+Quantidade mínima no estoque:
+15
+
+---------- MENU ----------
+1 - Cadastrar novo produto
+2 - Listar produto(s)
+3 - Filtrar por categoria
+4 - Ordenar
+5 - Remover elemento
+6 - Atualizar preço
+7 - Listagem com subtotal do valor em estoque por categoria
+0 - Sair do programa
+2
+
+--------- Produto 1 ---------
 Nome: leite
 Descrição: integral
 Categoria: comida
-Quantidade em estoque: 40
-Quantidade mínima: 5
-Preço do produto: 6
+Preço unitário: R$6,00
+Quantidade no estoque: 80
 
+--------- Produto 2 ---------
 Nome: sabonete
-Descrição: líquido
+Descrição: l¡quido
 Categoria: higiene
-Quantidade em estoque: 50
-Quantidade mínima: 10
-Preço do produto: 10
+Preço unitário: R$10,00
+Quantidade no estoque: 50
 
-Nome: pão
+--------- Produto 3 ---------
+Nome: banana
+Descrição: prata
+Categoria: comida
+Preço unitário: R$2,00
+Quantidade no estoque: 100
+
+---------- MENU ----------
+1 - Cadastrar novo produto
+2 - Listar produto(s)
+3 - Filtrar por categoria
+4 - Ordenar
+5 - Remover elemento
+6 - Atualizar preço
+7 - Listagem com subtotal do valor em estoque por categoria
+0 - Sair do programa
+3
+Qual categoria deseja filtrar?
+comida
+
+
+Nome: leite
 Descrição: integral
 Categoria: comida
-Quantidade em estoque: 200
-Quantidade mínima: 50
-Preço do produto: 1
+Preço unitário: R$6,00
+Quantidade no estoque: 80
+
+
+Nome: banana
+Descrição: prata
+Categoria: comida
+Preço unitário: R$2,00
+Quantidade no estoque: 100
+
+---------- MENU ----------
+1 - Cadastrar novo produto
+2 - Listar produto(s)
+3 - Filtrar por categoria
+4 - Ordenar
+5 - Remover elemento
+6 - Atualizar preço
+7 - Listagem com subtotal do valor em estoque por categoria
+0 - Sair do programa
+4
+
+---------- MENU ----------
+1 - Cadastrar novo produto
+2 - Listar produto(s)
+3 - Filtrar por categoria
+4 - Ordenar
+5 - Remover elemento
+6 - Atualizar preço
+7 - Listagem com subtotal do valor em estoque por categoria
+0 - Sair do programa
+3
+Qual categoria deseja filtrar?
+comida
+
+
+Nome: banana
+Descrição: prata
+Categoria: comida
+Preço unitário: R$2,00
+Quantidade no estoque: 100
+
+
+Nome: leite
+Descrição: integral
+Categoria: comida
+Preço unitário: R$6,00
+Quantidade no estoque: 80
+
+---------- MENU ----------
+1 - Cadastrar novo produto
+2 - Listar produto(s)
+3 - Filtrar por categoria
+4 - Ordenar
+5 - Remover elemento
+6 - Atualizar preço
+7 - Listagem com subtotal do valor em estoque por categoria
+0 - Sair do programa
+5
+Qual produto deseja remover?
+banana
+
+---------- MENU ----------
+1 - Cadastrar novo produto
+2 - Listar produto(s)
+3 - Filtrar por categoria
+4 - Ordenar
+5 - Remover elemento
+6 - Atualizar preço
+7 - Listagem com subtotal do valor em estoque por categoria
+0 - Sair do programa
+1
+Nome do produto:
+granola
+Descrição do produto:
+com castanhas
+Categoria do produto:
+comida
+Preço unitário do produto:
+7
+Quantidade no estoque
+60
+Quantidade mínima no estoque:
+5
+
+---------- MENU ----------
+1 - Cadastrar novo produto
+2 - Listar produto(s)
+3 - Filtrar por categoria
+4 - Ordenar
+5 - Remover elemento
+6 - Atualizar preço
+7 - Listagem com subtotal do valor em estoque por categoria
+0 - Sair do programa
+1
+Não é possível cadastrar mais produtos, vetor cheio!
+
+---------- MENU ----------
+1 - Cadastrar novo produto
+2 - Listar produto(s)
+3 - Filtrar por categoria
+4 - Ordenar
+5 - Remover elemento
+6 - Atualizar preço
+7 - Listagem com subtotal do valor em estoque por categoria
+0 - Sair do programa
+7
+Digite a categoria:
+comida
+
+Nome: leite
+Preço: 6,00
+Quantidade: 80
+-------------------
+Nome: granola
+Preço: 7,00
+Quantidade: 60
+-------------------
+Subtotal da categoria comida: R$ 900,00
+---------- MENU ----------
+1 - Cadastrar novo produto
+2 - Listar produto(s)
+3 - Filtrar por categoria
+4 - Ordenar
+5 - Remover elemento
+6 - Atualizar preço
+7 - Listagem com subtotal do valor em estoque por categoria
+0 - Sair do programa
+6
+Qual produto deseja atualizar o preço?
+granola
+Digite o novo preço:
+8
+Preço atualizado!
+
+---------- MENU ----------
+1 - Cadastrar novo produto
+2 - Listar produto(s)
+3 - Filtrar por categoria
+4 - Ordenar
+5 - Remover elemento
+6 - Atualizar preço
+7 - Listagem com subtotal do valor em estoque por categoria
+0 - Sair do programa
+4
+
+---------- MENU ----------
+1 - Cadastrar novo produto
+2 - Listar produto(s)
+3 - Filtrar por categoria
+4 - Ordenar
+5 - Remover elemento
+6 - Atualizar preço
+7 - Listagem com subtotal do valor em estoque por categoria
+0 - Sair do programa
+7
+Digite a categoria:
+comida
+
+Nome: granola
+Preço: 8,00
+Quantidade: 60
+-------------------
+Nome: leite
+Preço: 6,00
+Quantidade: 80
+-------------------
+Subtotal da categoria comida: R$ 960,00
+---------- MENU ----------
+1 - Cadastrar novo produto
+2 - Listar produto(s)
+3 - Filtrar por categoria
+4 - Ordenar
+5 - Remover elemento
+6 - Atualizar preço
+7 - Listagem com subtotal do valor em estoque por categoria
+0 - Sair do programa
+0
+Fechando o programa
