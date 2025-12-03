@@ -3,7 +3,7 @@ package Exemplos;
 import java.util.Scanner;
 import java.util.Arrays;
 
-public class VetorSemReposicao{
+public class Exemplo05{
     public static void main(String args[]){
         int[] numeros = new int[10];
 

@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
 public class Exemplo04{
+    public static Scanner input = new Scanner(System.in);
     public static final int QTD = 4;
     public static void main(String args[]){
-        Scanner input = new Scanner(System.in);
         int[] numeros = new int[QTD];
         int soma = 0;
         double media;
