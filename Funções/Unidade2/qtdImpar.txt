@@ -1,0 +1,3 @@
+public static int qtdImpar(int[][] m){
+    return m.length*m[0].length - qtdPar(m);
+}

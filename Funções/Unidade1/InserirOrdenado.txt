@@ -1,0 +1,13 @@
+public static int inserirOrdenado(int[] v, int tam, int x){
+    if(tam >= v.length){
+        System.out.println("Vetor cheio!);
+        return tam;    
+    }
+    int pos = tam;
+    while(pos > 0 && x < v[pos-1]){
+        v[pos] = v[pos-1];
+        pos--;
+    }
+    v[pos] = x;
+    return tam+1;
+}

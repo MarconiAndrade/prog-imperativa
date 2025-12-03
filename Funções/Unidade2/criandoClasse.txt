@@ -1,0 +1,6 @@
+public class Aluno{
+    String nome;
+    int idade;
+    double nota1, nota2;
+}
+//tem que estar em um arquivo Aluno.java separado e na mesma pasta do Main.java

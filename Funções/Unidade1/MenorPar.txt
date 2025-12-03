@@ -1,0 +1,20 @@
+public static void menorPar(int[] v, int tam, int[] resultado) {
+    boolean encontrouPar = false;
+    int menor = 0;
+    for (int i = 0; i < tam; i++){
+        if (v[i] % 2 == 0) {
+            if(!encontrouPar){
+                menor = v[i];
+                encontrouPar = true;
+            }
+            else if(v[i] < menor){
+                menor = v[i];
+            }
+        }
+    }
+
+    if (encontrouPar) {
+        resultado[0] = menor;
+    } else {
+        resultado[0] = -1;
+}

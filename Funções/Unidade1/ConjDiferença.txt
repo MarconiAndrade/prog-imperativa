@@ -1,0 +1,10 @@
+public static int Diferenca(int[] v1, int tam1, int[] v2, tam2, int[] vd){
+    int tamDiferenca = o
+    for(int i = 0; i < tam; i++){
+        if(buscaSequencial(v2, tam2, v1[i]) == -1){
+            vd[tamDiferenca] = v1[i];
+            tamDiferenca++;
+        }
+    }
+    return tamDiferenca;
+}

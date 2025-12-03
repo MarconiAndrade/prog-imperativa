@@ -1,0 +1,23 @@
+public static void transporMatriz(int[][] m){
+    if(m.length != m[0].length){
+        System.out.println("Operação inválida!");
+        return;
+    }
+    int aux;
+    for(int i = 0; i < m.length; i++){
+        for(int j = 0; j < m[0].length; j++){
+            if(i < j){
+                aux = m[i][j];
+                m[i][j] = m[j][i];
+                m[j][i] = aux;
+            }
+        }
+    }
+}
+
+//outra forma de escrever os for's para percorrer apenas o triâng. de cima da matriz:
+    for(int i = 0; i < m.length - 1; i++){
+        for(int j = i+1; j < m[0].length; j++){
+            aux = m[i][j];
+            m[i][j] = m[j][i];
+            m[j][i] = aux;

@@ -1,0 +1,15 @@
+//TEM QUE ESTAR ORDENADO E tam > 0 !! colocar if caso tam < 0
+
+public static void imprimirTabelaFrequencia(int[] v, int tam){
+    int qtd = 1;
+    for(int i = 1; i < tam; i++){
+        if(v[i] != v[i-1]){
+            System.out.println(v[i-1] + "|" + qtd);
+            qtd = 1;
+        }
+        else{
+            qtd++;
+        }
+    }
+    System.out.println(v[tam-1] + "|" qtd);
+}

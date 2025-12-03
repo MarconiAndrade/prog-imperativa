@@ -1,0 +1,10 @@
+public static void imprimirVetor(int[] v, int tam){
+    System.out.print("{");
+    if(tam > 0){
+        System.out.print(v[0]);
+    }
+    for(int i = 1; i < tam; i++){
+        System.out.print(", " + v[i]);
+    }
+    System.out.println("}");
+}
