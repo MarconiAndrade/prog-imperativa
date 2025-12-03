@@ -1,14 +1,14 @@
 import java.util.Scanner;
 
 public class QuestaoConjuntos{
+    public static Scanner input = new Scanner(System.in);
     public static void main(String[] args){
-        Scanner scanner = new Scanner(System.in);
         int[] conjuntoA = new int[30];
         int[] conjuntoB = new int[30];
         int tamA = 0, tamB = 0, opcao;
         do{
             opcoesMenu();
-            opcao = scanner.nextInt();
+            opcao = input.nextInt();
             switch(opcao){
                 case 1:
                     tamA = inserirNumero(conjuntoA, tamA);
@@ -38,29 +38,28 @@ public class QuestaoConjuntos{
                     System.out.println("Opção inválida. Tente novamente.");
             }
         } while(opcao != 0);
-        scanner.close();
+        input.close();
     }
 
     public static void opcoesMenu(){
-        System.out.println("\n1) Inserir 1 elemento no Conjunto A");
-        System.out.println("2) Inserir 1 elemento no Conjunto B");
-        System.out.println("3) Imprimir os Conjuntos A e B");
-        System.out.println("4) Gerar e Imprimir a união de A e B");
-        System.out.println("5) Gerar e Imprimir a interseção entre A e B");
-        System.out.println("6) Gerar e Imprimir a diferença entre A e B");
-        System.out.println("7) Gerar e Imprimir a diferença entre B e A");
-        System.out.println("0) Sair");
-        System.out.print("Escolha uma opção: ");
+        System.out.println("\n1 - Inserir elemento no Conjunto A");
+        System.out.println("2 - Inserir elemento no Conjunto B");
+        System.out.println("3 - Imprimir os Conjuntos A e B");
+        System.out.println("4 - Gerar e Imprimir a união de A e B");
+        System.out.println("5 - Gerar e Imprimir a interseção entre A e B");
+        System.out.println("6 - Gerar e Imprimir a diferença entre A e B");
+        System.out.println("7 - Gerar e Imprimir a diferença entre B e A");
+        System.out.println("0 - Sair");
+        System.out.println("Escolha uma opção:");
     }
 
     public static int inserirNumero(int[] vetor, int tam){
-        Scanner scanner = new Scanner(System.in);
         if(tam >= vetor.length){
             System.out.println("Conjunto cheio. Não é possível inserir mais números.");
             return tam;
         }
-        System.out.print("Digite o número desejado: ");
-        int numero = scanner.nextInt();
+        System.out.print("Digite o número desejado:");
+        int numero = input.nextInt();
         if(buscaSequencial(vetor, tam, numero) != -1){
             System.out.println("O número " + numero + " já existe no conjunto.");
             return tam;
